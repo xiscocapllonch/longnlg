@@ -18,5 +18,8 @@ jobs:
       - name: Install dependecies
         run: pipenv install --dev
 
+      - name: Install nltk data
+        run: (echo "import nltk" ; echo "nltk.download('punkt')") | pipenv run python
+
       - name: Run tests
         run: pipenv run pytest

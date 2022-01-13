@@ -1,0 +1,22 @@
+name: Test project
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.10'
+
+      - name: Install pipenv
+        run: pip install pipenv
+
+      - name: Install dependecies
+        run: pipenv install --dev
+
+      - name: Run tests
+        run: pipenv run pytest

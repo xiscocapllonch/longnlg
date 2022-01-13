@@ -9,6 +9,7 @@ pytest = "*"
 [packages]
 transformers = "*"
 torch = "*"
+nltk = "*"
 
 [requires]
 python_version = "3.8"
